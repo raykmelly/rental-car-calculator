@@ -25,25 +25,28 @@ public class RentalCarCalculator {
         int age = scanner.nextInt();
 
         // Display basic car rental cost
-        double basicDailyFee = CalculateDailyFee(age);
-        System.out.printf("%n[Basic daily fee]: %.2f%n",basicDailyFee);
+        double dailyFee = 29.99;
+        System.out.printf("%n[Basic rental cost]: %.2f",dailyFee);
+        double finalDailyFee = CalculateDailyFee(dailyFee,age);
+        System.out.printf("%n[Daily fee]: %.2f",finalDailyFee);
         // Display the daily options cost
         double optionsCost = CalculateOptionsCost(hasTag,hasGPS,hasRoadAssistance);
-        System.out.printf("%n[Daily options add-ons]: %.2f%n",optionsCost);
+        System.out.printf("%n[Daily options add-ons]: %.2f",optionsCost);
 
         // Close the scanner
         scanner.close();
     }
 
-    public static double CalculateDailyFee(int age){
+    public static double CalculateDailyFee(double dailyFee, int age){
         // Default daily rental fee
-        double dailyFee = 29.99;
+        double finalDailyFee = dailyFee;
         if (age < 25) {
             // If under 25, add a 30% additional charge to the daily rental fee
-            dailyFee += dailyFee * (30.0/100.0);
+            System.out.println("->You're under 25, adding a 30% surcharge to daily rental fee...");
+            finalDailyFee += finalDailyFee * (30.0/100.0);
         }
         // Return the daily rental fee
-        return dailyFee;
+        return finalDailyFee;
     }
 
     public static double CalculateOptionsCost(String hasTag, String hasGPS, String hasRoadAssistance) {

@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20019f57-79bd-4cb3-a4c4-d9ddee733c20" name="Changes" comment="Finished the prompting from the user and made the first method to calculate the daily rental fee: CalculateDailyFee()">
+    <list default="true" id="20019f57-79bd-4cb3-a4c4-d9ddee733c20" name="Changes" comment="Finished the daily options add on fees. Calculated in a method then displayed in main">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/RentalCarCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/RentalCarCalculator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,6 +25,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "Main"
   }
 }]]></component>
@@ -51,12 +52,28 @@
       <option name="project" value="LOCAL" />
       <updated>1792437744759</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Started to calculate the options cost total">
+      <created>1792438084796</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1792438084796</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Finished the daily options add on fees. Calculated in a method then displayed in main">
+      <created>1792438378215</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1792438378215</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Started project" />
     <MESSAGE value="Finished the prompting from the user and made the first method to calculate the daily rental fee: CalculateDailyFee()" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished the prompting from the user and made the first method to calculate the daily rental fee: CalculateDailyFee()" />
+    <MESSAGE value="Started to calculate the options cost total" />
+    <MESSAGE value="Finished the daily options add on fees. Calculated in a method then displayed in main" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished the daily options add on fees. Calculated in a method then displayed in main" />
   </component>
 </project>
