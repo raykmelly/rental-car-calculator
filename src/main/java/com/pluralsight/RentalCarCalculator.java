@@ -27,6 +27,9 @@ public class RentalCarCalculator {
         // Display basic car rental cost
         double basicDailyFee = CalculateDailyFee(age);
         System.out.printf("%n[Basic daily fee]: %.2f%n",basicDailyFee);
+        // Display the daily options cost
+        double optionsCost = CalculateOptionsCost(hasTag,hasGPS,hasRoadAssistance);
+        System.out.printf("%n[Daily options add-ons]: %.2f%n",optionsCost);
 
         // Close the scanner
         scanner.close();
@@ -44,8 +47,17 @@ public class RentalCarCalculator {
     }
 
     public static double CalculateOptionsCost(String hasTag, String hasGPS, String hasRoadAssistance) {
+        // Calculate the total of all the options you selected
         double totalOptionsCost = 0;
-
+        if (hasTag.equalsIgnoreCase("Y")) {
+            totalOptionsCost += 3.95;
+        }
+        if (hasGPS.equalsIgnoreCase("Y")) {
+            totalOptionsCost += 2.95;
+        }
+        if (hasRoadAssistance.equalsIgnoreCase("Y")) {
+            totalOptionsCost += 3.95;
+        }
         return totalOptionsCost;
     }
 }
