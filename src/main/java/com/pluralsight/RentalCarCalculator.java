@@ -26,13 +26,16 @@ public class RentalCarCalculator {
 
         // Display basic car rental cost
         double dailyFee = 29.99;
-        System.out.printf("%n[Basic rental cost]: %.2f%n",dailyFee);
+        System.out.printf("%n[Basic rental cost]: $%.2f%n",dailyFee);
         // Display the daily fee
         double finalDailyFee = CalculateDailyFee(dailyFee,age);
-        System.out.printf("[Daily fee]: %.2f%n",finalDailyFee);
+        System.out.printf("[Daily fee]: $%.2f%n",finalDailyFee);
         // Display the daily options cost
-        double optionsCost = CalculateOptionsCost(hasTag,hasGPS,hasRoadAssistance);
-        System.out.printf("[Daily options add-ons]: %.2f%n",optionsCost);
+        double dailyOptionsCost = CalculateOptionsCost(hasTag,hasGPS,hasRoadAssistance);
+        System.out.printf("[Daily options add-ons]: $%.2f%n",dailyOptionsCost);
+        // Display the total of the car rental cost for all days
+        double totalRentalCost = CalculateTotalRentalCost(rentalDays,finalDailyFee,dailyOptionsCost);
+        System.out.printf("[Total rental cost]: $%.2f%n",totalRentalCost);
 
         // Close the scanner
         scanner.close();
@@ -46,7 +49,11 @@ public class RentalCarCalculator {
             finalDailyFee += finalDailyFee * (30.0/100.0);
             // Display if your under 25 and the additional charge
             System.out.println("->You're under 25, adding a 30% surcharge to daily rental fee...");
-            System.out.printf("[Underage surcharge]: %.2f%n",finalDailyFee * (30.0/100.0));
+            System.out.printf("[Underage surcharge]: $%.2f%n",finalDailyFee * (30.0/100.0));
+        } else {
+            // Display if your over 25 and there is no additional charge
+            System.out.println("->You're above 25, no additional daily rental fee...");
+            System.out.println("[Underage surcharge]: $0");
         }
         // Return the daily rental fee
         return finalDailyFee;
@@ -65,5 +72,9 @@ public class RentalCarCalculator {
             totalOptionsCost += 3.95;
         }
         return totalOptionsCost;
+    }
+
+    public static double CalculateTotalRentalCost(int rentalDays, double finalDailyFee, double dailyOptionsCost) {
+        return rentalDays * (finalDailyFee + dailyOptionsCost);
     }
 }

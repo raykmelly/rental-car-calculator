@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="20019f57-79bd-4cb3-a4c4-d9ddee733c20" name="Changes" comment="Finished the daily options add on fees. Calculated in a method then displayed in main">
+    <list default="true" id="20019f57-79bd-4cb3-a4c4-d9ddee733c20" name="Changes" comment="Edited the main method to display the basic rental cost. Edited CalculateDailyFee to show how much the underage surcharge is.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/RentalCarCalculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/RentalCarCalculator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -66,7 +67,21 @@
       <option name="project" value="LOCAL" />
       <updated>1792438378215</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Edited CalculateDailyFee to take in the daily fee and return the final daily fee">
+      <created>1792439355945</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1792439355945</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Edited the main method to display the basic rental cost. Edited CalculateDailyFee to show how much the underage surcharge is.">
+      <created>1792439734824</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1792439734824</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -74,6 +89,9 @@
     <MESSAGE value="Finished the prompting from the user and made the first method to calculate the daily rental fee: CalculateDailyFee()" />
     <MESSAGE value="Started to calculate the options cost total" />
     <MESSAGE value="Finished the daily options add on fees. Calculated in a method then displayed in main" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finished the daily options add on fees. Calculated in a method then displayed in main" />
+    <MESSAGE value="Edited CalculateDailyFee to take in the daily fee and return the final daily fee" />
+    <MESSAGE value="Edited the main method to display the basic rental cost. Edited CalculateDailyFee to show how much the underage surcharge is." />
+    <MESSAGE value="Started the CalculateTotalRental" />
+    <option name="LAST_COMMIT_MESSAGE" value="Started the CalculateTotalRental" />
   </component>
 </project>
