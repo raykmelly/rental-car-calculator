@@ -1,0 +1,143 @@
+# Rental Car Calculator
+
+A Java console application that estimates the cost of a rental car reservation. It prompts the user for rental details, applies optional add-ons and an underage-driver surcharge, and prints an itemized cost breakdown.
+
+Built as part of the **Year Up Application Development** track (*Java Fundamentals, Workbook 1c – Introduction to Java*, "Exercises – Rental Car Company").
+
+---
+
+## Features
+
+- Interactive command-line prompts for pickup date, rental length, add-ons, and driver age
+- Optional daily add-ons: electronic toll tag, GPS, and roadside assistance
+- Automatic **30% underage surcharge** on the base rate for drivers under 25
+- Itemized output: base rate, surcharge, daily fee, daily add-ons, and total cost
+- Case-insensitive `Y`/`N` handling for add-on questions
+- Logic separated into small, single-purpose static methods
+
+## Pricing
+
+All taxes are already included in the listed fees.
+
+| Item | Cost |
+|---|---|
+| Base car rental | $29.99 / day |
+| Electronic toll tag | $3.95 / day |
+| GPS | $2.95 / day |
+| Roadside assistance | $3.95 / day |
+| Underage surcharge (age < 25) | 30% of the base daily rate |
+
+**Total cost** = `days × (daily fee + daily add-ons)`
+
+## Getting Started
+
+### Prerequisites
+
+- JDK 17 or newer
+- (Optional) Apache Maven 3.6+ or IntelliJ IDEA
+
+### Clone the repository
+
+```bash
+git clone https://github.com/raykmelly/rental-car-calculator.git
+cd rental-car-calculator
+```
+
+### Run from the command line
+
+```bash
+javac -d out src/main/java/com/pluralsight/RentalCarCalculator.java
+java -cp out com.pluralsight.RentalCarCalculator
+```
+
+### Run with IntelliJ IDEA
+
+1. Open the project folder (`File > Open`). IntelliJ will detect the Maven `pom.xml`.
+2. Open `src/main/java/com/pluralsight/RentalCarCalculator.java`.
+3. Click the green run icon beside `main`.
+
+## Usage
+
+The program asks six questions in order:
+
+| # | Prompt | Expected input |
+|---|---|---|
+| 1 | Pickup date | Text, e.g. `10-25-2026` (stored as a string) |
+| 2 | Number of rental days | Whole number |
+| 3 | Electronic toll tag | `Y` or `N` |
+| 4 | GPS | `Y` or `N` |
+| 5 | Roadside assistance | `Y` or `N` |
+| 6 | Driver age | Whole number |
+
+### Example session
+
+Input: 3 days, toll tag and GPS, no roadside assistance, age 30.
+
+```text
+Enter a pickup date (MM-DD-YYYY):
+10-25-2026
+Enter number of days for the rental:
+3
+Do you want an electronic toll tag? + $3.95/day. (Y/N):
+Y
+Do you want a GPS? + $2.95/day. (Y/N):
+Y
+Do you want roadside assistance? + $3.95/day. (Y/N):
+N
+Enter your age:
+30
+
+[Basic rental cost]: $29.99
+->You're above 25, no additional daily rental fee...
+[Underage surcharge]: $0
+[Daily fee]: $29.99
+[Daily options add-ons]: $6.90
+[Total rental cost]: $110.67
+```
+
+Check: `3 × ($29.99 + $6.90) = $110.67`
+
+## Project Structure
+
+```text
+rental-car-calculator/
+├── pom.xml
+└── src/
+    └── main/
+        └── java/
+            └── com/pluralsight/
+                └── RentalCarCalculator.java
+```
+
+### Methods
+
+| Method | Responsibility |
+|---|---|
+| `main` | Collects user input, calls the calculation methods, and prints results |
+| `CalculateDailyFee(double, int)` | Applies the 30% surcharge when the driver is under 25 and returns the final daily fee |
+| `CalculateOptionsCost(String, String, String)` | Sums the daily cost of the selected add-ons |
+| `CalculateTotalRentalCost(int, double, double)` | Returns the total for the full rental period |
+
+## Concepts Practiced
+
+- Reading console input with `Scanner` (including consuming the leftover newline after `nextInt()`)
+- `if` / `else` conditionals and `String.equalsIgnoreCase()`
+- Declaring static methods with parameters and return values
+- Formatted output with `System.out.printf()`
+- Planning program flow before coding, and committing progress incrementally with Git
+
+## Known Limitations and Future Improvements
+
+- **Input validation:** non-numeric days or age, negative numbers, and answers other than `Y`/`N` are not handled. Invalid numbers will crash the program, and any answer other than `Y` is treated as "no".
+- **Date handling:** the pickup date is collected as a plain string and is not validated or used in calculations (per the exercise requirements).
+- **Possible next steps:** input validation loops, `LocalDate` for date parsing, constants for prices, unit tests with JUnit, and Java naming conventions for method names (`calculateDailyFee`).
+
+## Author
+
+**Raymond**
+Year Up Application Development, Dallas
+GitHub: [@raykmelly](https://github.com/raykmelly)
+
+## Acknowledgments
+
+Project requirements are from the Year Up *Java Fundamentals – Student Workbook 1c: Introduction to Java* (v7.2 Y).
