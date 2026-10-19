@@ -49,7 +49,7 @@ public class RentalCarCalculator {
             finalDailyFee += finalDailyFee * (30.0/100.0);
             // Display if your under 25 and the additional charge
             System.out.println("->You're under 25, adding a 30% surcharge to daily rental fee...");
-            System.out.printf("[Underage surcharge]: $%.2f%n",finalDailyFee * (30.0/100.0));
+            System.out.printf("[Underage surcharge]: $%.2f%n", dailyFee * (30.0/100.0));
         } else {
             // Display if your over 25 and there is no additional charge
             System.out.println("->You're above 25, no additional daily rental fee...");
