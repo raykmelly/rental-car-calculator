@@ -14,6 +14,7 @@ public class RentalCarCalculator {
         // Fix scanner
         scanner.nextLine();
 
+        // Prompt for more information
         System.out.println("Do you want an electronic toll tag? + $3.95/day. (Y/N): ");
         String hasTag = scanner.nextLine();
         System.out.println("Do you want a GPS? + $2.95/day. (Y/N): ");
@@ -23,7 +24,9 @@ public class RentalCarCalculator {
         System.out.println("Enter your age: ");
         int age = scanner.nextInt();
 
-
+        // Display basic car rental cost
+        double basicDailyFee = CalculateDailyFee(age);
+        System.out.printf("%n[Basic daily fee]: %.2f%n",basicDailyFee);
 
         // Close the scanner
         scanner.close();
@@ -38,5 +41,11 @@ public class RentalCarCalculator {
         }
         // Return the daily rental fee
         return dailyFee;
+    }
+
+    public static double CalculateOptionsCost(String hasTag, String hasGPS, String hasRoadAssistance) {
+        double totalOptionsCost = 0;
+
+        return totalOptionsCost;
     }
 }
